@@ -14,6 +14,7 @@
 		528BB97A21C8218D0053C655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528BB97821C8218D0053C655 /* LaunchScreen.storyboard */; };
 		528BB98521C8218D0053C655 /* Custom_Gauge_ControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BB98421C8218D0053C655 /* Custom_Gauge_ControlTests.swift */; };
 		528BB99021C8218D0053C655 /* Custom_Gauge_ControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BB98F21C8218D0053C655 /* Custom_Gauge_ControlUITests.swift */; };
+		528BB99E21C822D50053C655 /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528BB99D21C822D50053C655 /* GaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		528BB98B21C8218D0053C655 /* Custom Gauge ControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Custom Gauge ControlUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528BB98F21C8218D0053C655 /* Custom_Gauge_ControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Custom_Gauge_ControlUITests.swift; sourceTree = "<group>"; };
 		528BB99121C8218D0053C655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		528BB99D21C822D50053C655 /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		528BB96E21C8218B0053C655 /* Custom Gauge Control */ = {
 			isa = PBXGroup;
 			children = (
+				528BB99D21C822D50053C655 /* GaugeView.swift */,
 				528BB96F21C8218B0053C655 /* AppDelegate.swift */,
 				528BB97121C8218B0053C655 /* ViewController.swift */,
 				528BB97321C8218B0053C655 /* Main.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528BB97221C8218B0053C655 /* ViewController.swift in Sources */,
+				528BB99E21C822D50053C655 /* GaugeView.swift in Sources */,
 				528BB97021C8218B0053C655 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
