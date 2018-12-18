@@ -50,6 +50,10 @@ class GaugeView: UIView {
     var needleWidth : CGFloat = 4
     let needle = UIView()
     
+    let valueLabel = UILabel()
+    var valueFont = UIFont.systemFont(ofSize: 56)
+    var valueColor = UIColor.black
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUp()
@@ -58,6 +62,24 @@ class GaugeView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUp()
+    }
+    
+    var value: Int = 0 {
+        didSet {
+            //update the value label to show the exact number
+            valueLabel.text = String(value)
+            
+            //figure out where the needle is, between 0 and 1
+            let needlePosition = CGFloat(value) / 100
+            
+            // create a lerp from teh start angle (rotation) through to the end angle (rotation + totalAngle)
+            let lerpFrom = rotation
+            let lerpTo = rotation + totalAngle
+            
+            //lerp from the start to end position, based on the needle's position
+            let needleRotation = lerpFrom + (lerpTo - lerpFrom) * needlePosition
+            needle.transform = CGAffineTransform(rotationAngle: deg2rad(needleRotation))
+        }
     }
     
     func drawBackground(in rect: CGRect, context ctx: CGContext){
@@ -212,6 +234,17 @@ class GaugeView: UIView {
         // now center the needle over our center point
         needle.center = CGPoint(x: bounds.midX, y: bounds.midY)
         addSubview(needle)
+        
+        valueLabel.font = valueFont
+        valueLabel.textColor = valueColor
+        valueLabel.text = "100"
+        valueLabel.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(valueLabel)
+        
+        NSLayoutConstraint.activate([
+            valueLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            valueLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            ])
     }
     
     func deg2rad(_ number: CGFloat) -> CGFloat {

@@ -17,6 +17,31 @@ class ViewController: UIViewController {
         let test = GaugeView(frame: CGRect(x: 40, y: 40, width: 256, height: 256))
         test.backgroundColor = .clear
         view.addSubview(test)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIView.animate(withDuration: 1){
+                test.value = 33
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            UIView.animate(withDuration: 1){
+                test.value = 66
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            UIView.animate(withDuration: 1){
+                test.value = 0
+            }
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 12) {
+            UIView.animate(withDuration: 1){
+                test.value = 99
+            }
+        }
+
     }
 
 
