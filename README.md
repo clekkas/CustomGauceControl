@@ -17,3 +17,8 @@ Things to improve on:
 <li>Add an accessibilityLabel that reads the value of the gauge to folks using Voiceover.</li>
 <li>Make sure that changing properties triggers a redraw / update of the gauge.</li>
 </ol>
+
+Ideas to expand on:
+<ol>
+  <li> Make a game/app that you need to set gauge/temperature 'just right" green segment, while a background service keeps trying to push the needle to red </li>
+</ol>
